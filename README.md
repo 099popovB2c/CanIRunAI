@@ -1,21 +1,23 @@
 # CanIRunAI
 
-CanIRunAI inspects your computer and estimates which local AI model sizes are realistic.
+CanIRunAI inspects your computer and estimates which local AI model sizes are realistic **before** you download them.
 
-## Features
+## v0.2.0
 
-- Detect RAM, free disk, OS, CPU
-- Detect NVIDIA GPU/VRAM via `nvidia-smi` when available
-- Model-size profiles from 1.5B to 70B
-- Conservative fit recommendations for Q4 inference
-- Ollama install command suggestions
-- JSON report output
-
-## Run
+- Detect total/available RAM, disk, CPU and all NVIDIA GPUs
+- Aggregate multi-GPU VRAM
+- Detect Ollama, llama.cpp, LM Studio CLI and vLLM when present
+- Quantization-aware estimates: Q2_K through Q8_0
+- Conservative GOOD / TIGHT / SLOW / NO fit verdicts
+- Hardware overrides to simulate another machine
+- Evaluate an arbitrary model size with `--model-size`
+- JSON output
 
 ```bash
 python canirunai.py
+python canirunai.py --quant Q5_K_M
+python canirunai.py --model-size 12 --vram 12 --ram 32
 python canirunai.py --json report.json
 ```
 
-Performance estimates are approximate and intentionally conservative.
+Estimates are approximate: context length, KV cache, architecture, runtime and offload settings materially affect real memory and speed.
