@@ -1,38 +1,73 @@
 [
   {
-    "name": "Tiny 1.5B",
-    "params_b": 1.5,
-    "use_case": "light chat / extraction",
-    "ollama": "qwen2.5:1.5b"
+    "name": "Qwen3 4B",
+    "params_b": 4,
+    "use_case": "small multilingual assistant / coding",
+    "ollama": "qwen3:4b",
+    "context": 262144,
+    "layers": 36,
+    "hidden_size": 2560,
+    "attention_heads": 32,
+    "kv_heads": 8
   },
   {
-    "name": "Small 3B",
-    "params_b": 3,
-    "use_case": "light assistant",
-    "ollama": "llama3.2:3b"
-  },
-  {
-    "name": "7B/8B class",
+    "name": "Qwen3 8B",
     "params_b": 8,
-    "use_case": "general local assistant",
-    "ollama": "qwen2.5:7b"
+    "use_case": "general local assistant / reasoning",
+    "ollama": "qwen3:8b",
+    "context": 40960,
+    "layers": 36,
+    "hidden_size": 4096,
+    "attention_heads": 32,
+    "kv_heads": 8
   },
   {
-    "name": "14B class",
+    "name": "Gemma 3 12B",
+    "params_b": 12,
+    "use_case": "multimodal-capable general assistant",
+    "ollama": "gemma3:12b",
+    "context": 131072
+  },
+  {
+    "name": "Qwen3 14B",
     "params_b": 14,
-    "use_case": "stronger reasoning/coding",
-    "ollama": "qwen2.5:14b"
+    "use_case": "strong local reasoning / coding",
+    "ollama": "qwen3:14b",
+    "context": 40960,
+    "layers": 40,
+    "hidden_size": 5120,
+    "attention_heads": 40,
+    "kv_heads": 8
   },
   {
-    "name": "32B class",
+    "name": "gpt-oss 20B",
+    "params_b": 20.9,
+    "active_params_b": 3.6,
+    "use_case": "agentic reasoning / developer tasks",
+    "ollama": "gpt-oss:20b",
+    "context": 131072
+  },
+  {
+    "name": "Qwen3 30B-A3B",
+    "params_b": 30.5,
+    "active_params_b": 3.3,
+    "use_case": "MoE reasoning / coding",
+    "ollama": "qwen3:30b",
+    "context": 262144
+  },
+  {
+    "name": "Qwen3 32B",
     "params_b": 32,
-    "use_case": "advanced local workloads",
-    "ollama": "qwen2.5:32b"
+    "use_case": "high-quality local reasoning",
+    "ollama": "qwen3:32b",
+    "context": 40960
   },
   {
-    "name": "70B class",
-    "params_b": 70,
-    "use_case": "large local workloads",
-    "ollama": "llama3.3:70b"
+    "name": "gpt-oss 120B",
+    "params_b": 116.8,
+    "active_params_b": 5.1,
+    "use_case": "large agentic reasoning workloads",
+    "ollama": "gpt-oss:120b",
+    "context": 131072
   }
 ]
