@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Tiny 1.5B Q4",
+    "params_b": 1.5,
+    "ram_gb": 3,
+    "vram_gb": 2,
+    "disk_gb": 1.2,
+    "ollama": "qwen2.5:1.5b"
+  },
+  {
+    "name": "Small 3B Q4",
+    "params_b": 3,
+    "ram_gb": 5,
+    "vram_gb": 3,
+    "disk_gb": 2.2,
+    "ollama": "llama3.2:3b"
+  },
+  {
+    "name": "7B/8B Q4",
+    "params_b": 8,
+    "ram_gb": 10,
+    "vram_gb": 6,
+    "disk_gb": 5.5,
+    "ollama": "qwen2.5:7b"
+  },
+  {
+    "name": "14B Q4",
+    "params_b": 14,
+    "ram_gb": 18,
+    "vram_gb": 10,
+    "disk_gb": 10,
+    "ollama": "qwen2.5:14b"
+  },
+  {
+    "name": "32B Q4",
+    "params_b": 32,
+    "ram_gb": 38,
+    "vram_gb": 24,
+    "disk_gb": 22,
+    "ollama": "qwen2.5:32b"
+  },
+  {
+    "name": "70B Q4",
+    "params_b": 70,
+    "ram_gb": 80,
+    "vram_gb": 48,
+    "disk_gb": 48,
+    "ollama": "llama3.3:70b"
+  }
+]
