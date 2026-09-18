@@ -1,1 +1,1 @@
-"""Packaged CanIRunAI data."""\n
+"""Packaged CanIRunAI data."""
