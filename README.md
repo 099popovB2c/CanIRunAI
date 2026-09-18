@@ -1,3 +1,20 @@
+## Install with pipx
+
+Install directly from GitHub:
+
+```bash
+pipx install "git+https://github.com/099popovB2c/CanIRunAI.git"
+```
+
+Then run it from anywhere:
+
+```bash
+canirunai
+canirunai --compare "Qwen3,Gemma"
+```
+
+---
+
 # CanIRunAI
 
 CanIRunAI answers a simple question before you waste time downloading a model:

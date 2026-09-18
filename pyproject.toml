@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canirunai"
+version = "0.4.0"
+description = "Inspect local hardware and estimate which AI models can realistically run"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [{name = "099popovB2c"}]
+keywords = ["local-ai", "llm", "hardware", "ollama", "vram", "ram", "cli"]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/099popovB2c/CanIRunAI"
+Repository = "https://github.com/099popovB2c/CanIRunAI"
+Issues = "https://github.com/099popovB2c/CanIRunAI/issues"
+
+[project.scripts]
+canirunai = "canirunai:main"
+
+[tool.setuptools]
+py-modules = ["canirunai"]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["canirunai_data*"]
+
+[tool.setuptools.package-data]
+canirunai_data = ["models.json"]
