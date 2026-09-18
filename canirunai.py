@@ -122,7 +122,11 @@ def record_benchmark(path,hw,model,quant,context,kv_quant,tps,status):
 def main():
     ap=argparse.ArgumentParser();ap.add_argument("--quant",choices=QUANTS,default="Q4_K_M");ap.add_argument("--context",type=int,default=8192);ap.add_argument("--kv-quant",choices=KV_BYTES,default="fp16");ap.add_argument("--ram",type=float);ap.add_argument("--vram",type=float);ap.add_argument("--disk",type=float);ap.add_argument("--model-size",type=float);ap.add_argument("--json");ap.add_argument("--top",type=int,default=5);ap.add_argument("--compare",help="comma-separated model name/tag filters");ap.add_argument("--benchmark-file",default="benchmarks.json");ap.add_argument("--record-benchmark",nargs=2,metavar=("MODEL","TOK_PER_SEC"));ap.add_argument("--list-benchmarks",action="store_true");a=ap.parse_args();hw=override(inspect(),a);bench=load_benchmarks(a.benchmark_file)
     if a.list_benchmarks:print(json.dumps(bench,indent=2));return
-    models_path=Path(__file__).with_name("models.json")\n    if not models_path.exists():\n        from importlib.resources import files as resource_files\n        models_path=resource_files("canirunai_data").joinpath("models.json")\n    models=json.loads(models_path.read_text(encoding="utf8"))
+    models_path=Path(__file__).with_name("models.json")
+    if not models_path.exists():
+        from importlib.resources import files as resource_files
+        models_path=resource_files("canirunai_data").joinpath("models.json")
+    models=json.loads(models_path.read_text(encoding="utf8"))
     if a.model_size:models=[{"name":f"Custom {a.model_size:g}B","params_b":a.model_size,"use_case":"custom","ollama":"","context":a.context}]
     models=match_models(models,a.compare)
     if not models:raise SystemExit("No models matched --compare.")
